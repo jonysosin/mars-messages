@@ -9,6 +9,7 @@ router.get('/status', (ctx) => {
 
 router.all('/webhook', async(ctx) => {
     console.log(JSON.stringify({ get: ctx.query, post: ctx.request.body }, null, 2))
+    ctx.body = { status: 'OK' }
 })
 
 module.exports = router
