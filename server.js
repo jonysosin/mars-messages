@@ -1,4 +1,4 @@
-console.log(3333)
+console.log(process.env.PORT)
 'use strict'
 
 /**
@@ -24,7 +24,7 @@ const init = async function init () {
     }))
     .use(bodyParser())
     .use(routes.routes())
-    .listen(8080)
+    .listen(process.env.PORT)
 }
 
 module.exports.module = module
