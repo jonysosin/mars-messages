@@ -8,13 +8,17 @@ router.get('/status', (ctx) => {
 })
 
 router.all('/webhook', async(ctx) => {
-    
-    console.log(JSON.stringify({ get: ctx.query, post: ctx.request.body }, null, 2))
-    if (ctx.query['hub.challenge']) {
-        ctx.body = ctx.query['hub.challenge']
-    } else {
-        ctx.body = { status: 'OK' }
-    }
+  console.log(JSON.stringify({ get: ctx.query, post: ctx.request.body }, null, 2))
+  if (ctx.query['hub.challenge']) {
+    ctx.body = ctx.query['hub.challenge']
+  } else {
+    ctx.body = { status: 'OK' }
+  }
+})
+
+router.all('/test-webhook', async(ctx) => {
+  console.log('Webhook for testing')
+  console.log(JSON.stringify({ get: ctx.query, post: ctx.request.body }, null, 2))
 })
 
 module.exports = router
