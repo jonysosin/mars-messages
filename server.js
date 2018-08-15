@@ -15,7 +15,7 @@ const init = async function init () {
   const app = new Koa()
 
   const bodyParser = require('koa-bodyparser')
-  const xmlParser = require('koa-xml-body') 
+  const xmlParser = require('koa-xml-body')
   const routes = require('./routes')
 
   const server = app
