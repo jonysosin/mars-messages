@@ -13,14 +13,22 @@ module.exports = class Message {
     })
   }
 
-  async sendMessage () {
+  async sendMessage (userId) {
     return this.smooch.appUsers.sendMessage({
       appId: APP_ID,
-      userId: USER_ID,
+      userId: userId,
       message: {
-        type: 'text',
-        text: 'Just put some vinegar on it',
-        role: 'appMaker'
+        role: 'appMaker',
+        type: 'image',
+        text: 'Hello!',
+        mediaUrl: 'https://uploads-ssl.webflow.com/589c81e8313ec1b057657bc4/5a09b287e1339f0001a80a2b_octopuspng-p-1080.png',
+        actions: [
+          {
+            text: 'Hola! Soy un pulpo',
+            type: 'link',
+            uri: 'https://uploads-ssl.webflow.com'
+          }
+        ]
       }
     })
   }
