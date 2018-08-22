@@ -34,7 +34,8 @@ module.exports = class Message {
   }
 
   async onReceiveMessage (data) {
-    console.log(`ID DE USUARIO ${data.app._id}`)
-    await this.sendMessage(data.app._id)
+    const userId = data.appUser._id
+    console.log(userId)
+    await this.sendMessage(userId)
   }
 }
