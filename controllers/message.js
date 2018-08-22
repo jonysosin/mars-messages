@@ -49,7 +49,7 @@ module.exports = class Message {
         case 'conversation:read':
           this.sendMessage(data.appUser._id, {
             role: 'appMaker',
-            type: 'image',
+            type: 'text',
             text: 'Che no claves el visto!'
           })
           break
