@@ -6,8 +6,8 @@ console.log(process.env.PORT)
  * WARNING: avoid requiring app modules here because the app isn't ready yet
  */
 const path = require('path')
-
 const Koa = require('koa')
+
 const init = async function init () {
   /**
    * Koa app
@@ -17,6 +17,7 @@ const init = async function init () {
   const bodyParser = require('koa-bodyparser')
   const xmlParser = require('koa-xml-body')
   const routes = require('./routes')
+  const port = process.env.PORT || 4040
 
   const server = app
     .use(xmlParser({
@@ -24,7 +25,8 @@ const init = async function init () {
     }))
     .use(bodyParser())
     .use(routes.routes())
-    .listen(process.env.PORT)
+    .listen(port)
+    console.log(`Listening on PORT: ${port}`)
 }
 
 module.exports.module = module
