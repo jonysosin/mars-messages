@@ -41,6 +41,7 @@ module.exports = class Message {
   }
 
   async on (data) {
+    console.log(data)
     if (data.trigger) {
       switch (data.trigger) {
         case 'message:appUser':
