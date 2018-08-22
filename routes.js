@@ -14,6 +14,11 @@ router.all('/webhook', async(ctx) => {
   ctx.body = { status: 'OK' }
 })
 
+router.all('/send', async(ctx) => {
+  await messageController.sendMessage('ed85fd7224dd6a6856cf0fc1')
+  ctx.body = { status: 'OK' }
+})
+
 router.all('/test-webhook', async(ctx) => {
   // const smooch = new SmoochCore({
   //   keyId: 'app_5b7d97b20260730022c2116b',
