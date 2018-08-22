@@ -46,6 +46,9 @@ module.exports = class Message {
         case 'message:appUser':
           this.onReceiveMessage(data)
           break
+        default:
+          console.log(data)
+          break
       }
     }
   }
