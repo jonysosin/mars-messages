@@ -14,7 +14,7 @@ module.exports = class Message {
   }
 
   async sendMessage (userId) {
-    return this.smooch.appUsers.sendMessage({
+    const response = await this.smooch.appUsers.sendMessage({
       appId: APP_ID,
       userId: userId,
       message: {
@@ -31,6 +31,8 @@ module.exports = class Message {
         // ]
       }
     })
+
+    console.log(`Response of send: ${response}`)
   }
 
   async onReceiveMessage (data) {
