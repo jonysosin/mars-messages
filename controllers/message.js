@@ -14,23 +14,23 @@ module.exports = class Message {
   }
 
   async sendMessage (userId) {
-    return this.smooch.appUsers.sendMessage({
-      appId: APP_ID,
-      userId: userId,
-      message: {
-        role: 'appMaker',
-        type: 'image',
-        text: 'Hello!',
-        mediaUrl: 'https://uploads-ssl.webflow.com/589c81e8313ec1b057657bc4/5a09b287e1339f0001a80a2b_octopuspng-p-1080.png',
-        actions: [
-          {
-            text: 'Hola! Soy un pulpo',
-            type: 'link',
-            uri: 'https://uploads-ssl.webflow.com'
-          }
-        ]
-      }
-    })
+    // return this.smooch.appUsers.sendMessage({
+    //   appId: APP_ID,
+    //   userId: userId,
+    //   message: {
+    //     role: 'appMaker',
+    //     type: 'image',
+    //     text: 'Hello!',
+    //     mediaUrl: 'https://uploads-ssl.webflow.com/589c81e8313ec1b057657bc4/5a09b287e1339f0001a80a2b_octopuspng-p-1080.png'
+    //     // actions: [
+    //     //   {
+    //     //     text: 'Hola! Soy un pulpo',
+    //     //     type: 'link',
+    //     //     uri: 'https://uploads-ssl.webflow.com'
+    //     //   }
+    //     // ]
+    //   }
+    // })
   }
 
   async onReceiveMessage (data) {
