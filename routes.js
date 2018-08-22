@@ -14,8 +14,12 @@ router.all('/webhook', async(ctx) => {
   ctx.body = { status: 'OK' }
 })
 
-router.all('/send', async(ctx) => {
-  await messageController.sendMessage('ed85fd7224dd6a6856cf0fc1')
+router.all('/send/:userId', async(ctx, a, b, c) => {
+  let userId = 'ed85fd7224dd6a6856cf0fc1'
+  if (ctx.params && ctx.params.userId) {
+    userId = ctx.params.userId
+  }
+  await messageController.sendMessage(userId)
   ctx.body = { status: 'OK' }
 })
 
