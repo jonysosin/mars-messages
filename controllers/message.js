@@ -48,11 +48,11 @@ module.exports = class Message {
           this.onReceiveMessage(data)
           break
         case 'conversation:read':
-          this.sendMessage(data.appUser._id, {
-            role: 'appMaker',
-            type: 'text',
-            text: '¿Te puedo ayudar en algo?'
-          })
+          // this.sendMessage(data.appUser._id, {
+          //   role: 'appMaker',
+          //   type: 'text',
+          //   text: '¿Te puedo ayudar en algo?'
+          // })
           break
         default:
           console.log(data)
