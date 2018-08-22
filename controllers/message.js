@@ -38,4 +38,8 @@ module.exports = class Message {
     console.log(userId)
     await this.sendMessage(userId)
   }
+
+  async on (data) {
+    console.log(data)
+  }
 }

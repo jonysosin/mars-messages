@@ -10,7 +10,7 @@ router.get('/status', (ctx) => {
 })
 
 router.all('/webhook', async(ctx) => {
-  await messageController.onReceiveMessage(ctx.request.body)
+  await messageController.on(ctx.request.body)
   ctx.body = { status: 'OK' }
 })
 
