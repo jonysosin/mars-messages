@@ -46,6 +46,13 @@ module.exports = class Message {
         case 'message:appUser':
           this.onReceiveMessage(data)
           break
+        case 'conversation:read':
+          this.sendMessage(data.appUser._id, {
+            role: 'appMaker',
+            type: 'image',
+            text: 'Che no claves el visto!'
+          })
+          break
         default:
           console.log(data)
           break
