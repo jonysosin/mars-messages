@@ -37,10 +37,16 @@ module.exports = class Message {
 
   async onReceiveMessage (data) {
     const userId = data.appUser._id
-    console.log(userId)
+    console.log(`I received a message of: ${userId}`)
   }
 
   async on (data) {
-    console.log(data)
+    if (data.trigger) {
+      switch (data.trigger) {
+        case 'message:appUser':
+          this.onReceiveMessage(data)
+          break
+      }
+    }
   }
 }
