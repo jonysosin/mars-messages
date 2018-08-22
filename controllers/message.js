@@ -50,7 +50,7 @@ module.exports = class Message {
           this.sendMessage(data.appUser._id, {
             role: 'appMaker',
             type: 'text',
-            text: 'Che no claves el visto!'
+            text: '¿Te puedo ayudar en algo?'
           })
           break
         default:
